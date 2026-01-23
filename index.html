@@ -12,7 +12,6 @@
         h2 { color:#ffd700; text-align:center; margin-bottom:30px; }
         .service-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:25px; }
         
-        /* Style des boîtes cliquables */
         .service-card { text-decoration: none; color: inherit; display: block; }
         .service-box { 
             background:#1a1a1a; padding:30px; border-radius:15px; border: 1px solid #333; 
@@ -25,22 +24,17 @@
             margin-top:20px; display:inline-block; padding:10px 20px; 
             border: 1px solid #ffd700; color:#ffd700; border-radius:5px; font-weight:bold; 
         }
-        .depot-notice { text-align:center; margin-top:40px; color:#ffd700; font-style:italic; }
+
+        /* Section Approche */
+        .approach { background:#111; padding:30px; border-radius:15px; margin-top:40px; border-left: 5px solid #ffd700; }
+        .approach h3 { color:#ffd700; margin-top:0; }
 
         /* Bouton Contact Flottant */
         .floating-contact { 
-            position: fixed; 
-            bottom: 20px; 
-            right: 20px; 
-            background: #ffd700; 
-            color: black; 
-            padding: 15px 20px; 
-            border-radius: 50px; 
-            text-decoration: none; 
-            font-weight: bold; 
-            box-shadow: 0 4px 15px rgba(255,215,0,0.3); 
-            z-index: 99; 
-            font-size: 0.9rem;
+            position: fixed; bottom: 20px; right: 20px; background: #ffd700; 
+            color: black; padding: 15px 20px; border-radius: 50px; 
+            text-decoration: none; font-weight: bold; 
+            box-shadow: 0 4px 15px rgba(255,215,0,0.3); z-index: 99; font-size: 0.9rem;
         }
     </style>
 </head>
@@ -55,7 +49,6 @@
     <h2>Sélectionnez votre type de véhicule</h2>
     
     <div class="service-grid">
-
         <a href="choix-sedan.html" class="service-card">
             <div class="service-box">
                 <h3>Sedan</h3>
@@ -85,10 +78,13 @@
                 <div class="btn-select">Voir les options</div>
             </div>
         </a>
-
     </div>
 
-    <p class="depot-notice">⚠️ Un dépôt de 30% est requis pour confirmer chaque rendez-vous.</p>
+    <div class="approach">
+        <h3>Notre Approche</h3>
+        <p>Chez <strong>GlowShine Car</strong>, nous misons sur la qualité et la fiabilité. Pour garantir votre plage horaire, un <strong>dépôt de 30%</strong> est requis lors de la réservation via Virement Interac.</p>
+        <p>Cela nous permet de préparer l'équipement nécessaire et de vous offrir un service VIP sans attente.</p>
+    </div>
 </section>
 
 <a href="contact.html" class="floating-contact">💬 Nous contacter</a>
