@@ -2,11 +2,8 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>GlowShine Car | Detailing & Vitres Teintées</title>
+  <title>GlowShine Car | Accueil</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <meta name="keywords" content="detailing auto, lavage auto premium, vitres teintées, car detailing Montréal">
-  <meta name="description" content="GlowShine Car – services professionnels de detailing auto et vitres teintées.">
 
   <style>
     body {
@@ -16,23 +13,37 @@
       color: #f5f5f5;
     }
 
-    /* CINÉMATIQUE */
+    /* CINÉMATIQUE AVEC VOITURE */
     #cinematic {
       position: fixed;
       inset: 0;
-      background: black;
+      background: 
+        linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+        url("https://images.unsplash.com/photo-1605559424843-9e4c228bf1c4"); /* remplacer par votre voiture */
+      background-size: cover;
+      background-position: center;
       display: flex;
       align-items: center;
       justify-content: center;
       z-index: 9999;
       animation: fadeOut 1.5s ease forwards;
-      animation-delay: 4s;
+      animation-delay: 4.5s;
     }
 
     .cinematic-content {
       text-align: center;
       color: #ffd700;
       animation: zoomIn 2.5s ease forwards;
+    }
+
+    .cinematic-content h1 {
+      font-size: 3.5rem;
+      letter-spacing: 4px;
+    }
+
+    .cinematic-content p {
+      color: #ccc;
+      margin-top: 10px;
     }
 
     @keyframes zoomIn {
@@ -72,6 +83,7 @@
       margin-bottom: 30px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.6);
       color: #ccc;
+      line-height: 1.6;
     }
 
     .price {
@@ -90,33 +102,28 @@
       font-weight: bold;
     }
 
-    footer {
-      text-align: center;
-      padding: 25px;
-      background: #000;
-      color: #777;
-    }
   </style>
 </head>
 
 <body>
 
+<!-- CINÉMATIQUE -->
 <div id="cinematic">
   <div class="cinematic-content">
     <h1>GlowShine Car</h1>
-    <p>Detailing • Vitres teintées • Premium</p>
+    <p>Detailing • Vitres teintées • Finition premium</p>
   </div>
 </div>
 
 <header>
   <h1>GlowShine Car</h1>
-  <p>Lavage auto • Detailing • Vitres teintées</p>
+  <p>Lavage auto • Intérieur & Extérieur • Vitres teintées</p>
 </header>
 
 <section>
 
   <div class="box">
-    <h2>Nos services</h2>
+    <h2>Nos services & prix</h2>
 
     <p><strong>Sedan</strong><br>
       Lavage + Détail : <span class="price">200$</span><br>
@@ -135,6 +142,8 @@
       Vitres teintées : <span class="price">400$</span><br>
       Combo Premium : <span class="price">700$</span>
     </p>
+
+    <a class="btn" href="contact.html">Prendre rendez-vous</a>
   </div>
 
   <div class="box">
@@ -142,8 +151,6 @@
     <p>
       Un <strong>dépôt de 25%</strong> est requis pour confirmer tout rendez-vous.
     </p>
-
-    <a class="btn" href="contact.html">Prendre rendez-vous</a>
   </div>
 
 </section>
@@ -155,7 +162,7 @@
 <script>
   setTimeout(() => {
     document.getElementById("cinematic").style.display = "none";
-  }, 5500);
+  }, 6000);
 </script>
 
 </body>
@@ -164,7 +171,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>GlowShine Car | Contact</title>
+  <title>GlowShine Car | Rendez-vous</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <style>
@@ -217,41 +224,58 @@
       cursor: pointer;
     }
 
+    .depot {
+      margin-top: 20px;
+      color: #ffd700;
+      font-weight: bold;
+    }
+
     a {
       color: #ffd700;
       text-decoration: none;
     }
+
   </style>
 </head>
 
 <body>
 
 <header>
-  <h1>Contact & Rendez-vous</h1>
+  <h1>Notre approche</h1>
   <a href="index.html">← Retour à l’accueil</a>
 </header>
 
 <section>
 
   <div class="box">
-    <h2>Email</h2>
+    <p>
+      Chez GlowShine Car, chaque véhicule est traité avec précision, soin et respect.
+      Nous offrons un nettoyage complet de l’intérieur et de l’extérieur, et une installation
+      de vitres teintées professionnelle pour un rendu durable.
+    </p>
+  </div>
+
+  <div class="box">
+    <h2>Prendre rendez-vous</h2>
+    <form>
+      <input type="text" placeholder="Nom complet" required>
+      <input type="tel" placeholder="Numéro de téléphone" required>
+      <textarea placeholder="Message ou service désiré"></textarea>
+      <button type="submit">Envoyer</button>
+
+      <p class="depot">
+        ⚠️ Dépôt obligatoire de 25% pour confirmer le rendez-vous.
+      </p>
+    </form>
+  </div>
+
+  <div class="box">
+    <h2>Contact</h2>
     <p>
       <a href="mailto:Glowshinecar@gmail.com">
         Glowshinecar@gmail.com
       </a>
     </p>
-  </div>
-
-  <div class="box">
-    <h2>Demande de rendez-vous</h2>
-    <p>Un dépôt de 25% est requis pour confirmer.</p>
-
-    <form>
-      <input type="text" placeholder="Nom complet" required>
-      <input type="tel" placeholder="Numéro de téléphone" required>
-      <textarea placeholder="Service désiré / Message"></textarea>
-      <button type="submit">Envoyer</button>
-    </form>
   </div>
 
 </section>
