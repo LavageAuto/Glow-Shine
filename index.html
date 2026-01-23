@@ -194,12 +194,18 @@
 
     header h1 {
       color: #ffd700;
+      font-size: 2.8rem;
     }
 
     section {
-      max-width: 800px;
+      max-width: 900px;
       margin: auto;
       padding: 60px 20px;
+    }
+
+    h2 {
+      color: #ffd700;
+      margin-bottom: 15px;
     }
 
     .box {
@@ -207,6 +213,8 @@
       padding: 30px;
       border-radius: 12px;
       margin-bottom: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+      line-height: 1.7;
       color: #ccc;
     }
 
@@ -216,6 +224,12 @@
       margin-bottom: 15px;
       border-radius: 8px;
       border: none;
+      background: #2a2a2a;
+      color: #fff;
+    }
+
+    input::placeholder, textarea::placeholder {
+      color: #ccc;
     }
 
     button {
@@ -238,6 +252,7 @@
       color: #ffd700;
       text-decoration: none;
     }
+
   </style>
 </head>
 
@@ -255,10 +270,11 @@
     <h2>Notre approche</h2>
     <p>
       Chez GlowShine Car, chaque véhicule est traité avec précision, soin et respect.
-      Nous effectuons un nettoyage complet de l’intérieur et de l’extérieur, et installons
-      les vitres teintées avec soin pour un rendu propre et durable.
-      Nos produits sont de qualité professionnelle et chaque finition est vérifiée pour garantir
-      un résultat impeccable.
+      Nous effectuons un nettoyage complet de l’intérieur et de l’extérieur pour
+      redonner à votre voiture un aspect impeccable.  
+      Nos installations de vitres teintées sont réalisées avec soin pour un rendu
+      durable et propre. Chaque finition est vérifiée afin de garantir la qualité
+      professionnelle de nos services.
     </p>
   </div>
 
@@ -271,7 +287,7 @@
       <textarea placeholder="Message ou service désiré"></textarea>
       <button type="submit">Envoyer</button>
 
-      <!-- DÉPÔT OBLIGATOIRE EN BAS -->
+      <!-- DÉPÔT OBLIGATOIRE -->
       <p class="depot">
         ⚠️ Dépôt obligatoire de 25% pour confirmer le rendez-vous.
       </p>
