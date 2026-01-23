@@ -1,46 +1,47 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>GlowShine Car | Rendez-vous</title>
-<style>
-body { margin:0; font-family:Arial, Helvetica, sans-serif; background:#0e0e0e; color:#f5f5f5; }
-header { background: linear-gradient(135deg, #000, #1c1c1c); padding:50px 20px; text-align:center; }
-header h1 { color:#ffd700; font-size:2.5rem; margin-bottom:10px; }
-header a { color:#ffd700; text-decoration:none; font-size:0.95rem; }
-section { max-width:700px; margin:auto; padding:50px 20px; }
-h2 { color:#ffd700; margin-bottom:15px; text-align:center; }
-.box { background:#1a1a1a; padding:30px; border-radius:12px; margin-bottom:30px; box-shadow:0 10px 30px rgba(0,0,0,0.6); line-height:1.7; color:#ccc; }
-input, textarea { width:100%; padding:14px; margin-bottom:15px; border-radius:8px; border:none; background:#2a2a2a; color:#fff; font-size:1rem; }
-input::placeholder, textarea::placeholder { color:#bbb; }
-button { background:#ffd700; color:#000; padding:14px 30px; border:none; border-radius:30px; font-weight:bold; cursor:pointer; font-size:1rem; width:100%; }
-.depot { margin-top:20px; color:#ffd700; font-weight:bold; text-align:center; }
-footer { text-align:center; padding:20px; background:#000; color:#777; font-size:0.9rem; margin-top:30px; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - GlowShine Car</title>
+    <style>
+        body { margin:0; font-family:Arial, sans-serif; background:#0e0e0e; color:#f5f5f5; display:flex; justify-content:center; align-items:center; min-height:100vh; padding:20px; }
+        .contact-container { background:#1a1a1a; padding:40px; border-radius:15px; width:100%; max-width:500px; box-shadow:0 10px 30px rgba(0,0,0,0.5); text-align:center; position: relative; }
+        h1 { color:#ffd700; margin-bottom:10px; }
+        p { color:#ccc; margin-bottom:30px; }
+        input, select, textarea { width:100%; padding:12px; margin-bottom:20px; border-radius:8px; border:1px solid #333; background:#222; color:white; box-sizing: border-box; }
+        button { width:100%; padding:15px; background:#ffd700; color:black; border:none; border-radius:50px; font-weight:bold; cursor:pointer; transition:0.3s; font-size:1rem; }
+        button:hover { background:#ffc400; transform:scale(1.02); }
+        .depot-alert { color:#ffd700; font-size:0.85rem; margin-top:20px; display:block; font-style:italic; }
+        .btn-back { display: block; margin-bottom: 20px; color: #888; text-decoration: none; font-size: 0.9rem; }
+    </style>
 </head>
 <body>
-<header>
-<h1>Notre Approche</h1>
-<a href="index.html">← Retour à l’accueil</a>
-</header>
-<section>
-<div class="box">
-<h2>Un service professionnel</h2>
-<p>Chez GlowShine Car, chaque véhicule est traité avec précision, soin et respect.</p>
+
+<div class="contact-container">
+    <a href="index.html" class="btn-back">← Retour à l'accueil</a>
+    <h1>Prendre rendez-vous</h1>
+    <p>Chez GlowShine Car, chaque véhicule est traité avec précision, soin et respect.</p>
+
+    <form action="https://formspree.io/f/xbdggwvk" method="POST">
+        <input type="text" name="nom" placeholder="Nom complet" required>
+        <input type="email" name="email" placeholder="Votre email" required>
+        <input type="tel" name="telephone" placeholder="Numéro de téléphone" required>
+        
+        <select name="service" required>
+            <option value="" disabled selected>Service désiré</option>
+            <option value="Sedan">Sedan (Lavage / Teinte / Combo)</option>
+            <option value="SUV">SUV (Lavage / Teinte / Combo)</option>
+            <option value="Truck">Truck / Van (Lavage / Teinte / Combo)</option>
+        </select>
+
+        <textarea name="message" rows="4" placeholder="Précisez le service ou posez une question (ex: Date/Heure souhaitée)..."></textarea>
+
+        <button type="submit">Envoyer la demande</button>
+        
+        <span class="depot-alert">⚠️ Dépôt obligatoire de 30% pour confirmer le rendez-vous.</span>
+    </form>
 </div>
-<div class="box">
-<h2>Prendre rendez-vous</h2>
-<form action="https://formspree.io/f/xbdggwvk" method="POST">
-<input type="text" name="Nom" placeholder="Nom complet" required>
-<input type="email" name="Email" placeholder="Votre email" required>
-<input type="tel" name="Téléphone" placeholder="Numéro de téléphone" required>
-<textarea name="Service" placeholder="Service désiré" required></textarea>
-<button type="submit">Envoyer la demande</button>
-<p class="depot">⚠️ Dépôt obligatoire de 25% pour confirmer le rendez-vous.</p>
-</form>
-</div>
-</section>
-<footer>© 2026 GlowShine Car – Qualité & Finition</footer>
+
 </body>
 </html>
