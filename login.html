@@ -33,7 +33,7 @@
         const p = document.getElementById('pass').value.trim();
         const msg = document.getElementById('msg');
 
-        // --- TABLEAU DES ACCÈS ---
+        // --- LISTE COMPLÈTE DES ACCÈS ---
         if (u === "admin" && p === "glow2026") {
             alert("Accès autorisé : Bonjour Boss !");
             window.location.href = "gestion.html";
@@ -48,6 +48,10 @@
         } 
         else if ((u === "nathan" || u === "nathan brodeur") && p === "7526") {
             alert("Accès autorisé : Bonjour Nathan !");
+            window.location.href = "gestion.html";
+        } 
+        else if ((u === "nico" || u === "nico petit") && p === "8372") {
+            alert("Accès autorisé : Bonjour Nico !");
             window.location.href = "gestion.html";
         } 
         else {
