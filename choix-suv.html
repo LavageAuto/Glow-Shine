@@ -14,55 +14,111 @@
         .price { font-size: 1.2rem; font-weight: bold; margin: 10px 0; }
         .depot-text { font-size: 0.9rem; color: #aaa; }
         .btn-back { display: inline-block; margin-top: 20px; color: #888; text-decoration: none; }
-        #payment-modal { display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: #222; padding: 30px; border-radius: 20px; border: 2px solid #ffd700; width: 90%; max-width: 400px; box-shadow: 0 0 50px rgba(0,0,0,0.8); z-index: 100; }
-        .floating-contact { position: fixed; bottom: 20px; right: 20px; background: #ffd700; color: black; padding: 15px 20px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 15px rgba(255,215,0,0.3); z-index: 99; }
+
+        /* Style du Modal (Inspiré de ton image 1) */
+        #payment-modal { 
+            display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); 
+            background: #0e0e0e; width: 90%; max-width: 400px; border-radius: 20px; border: 2px solid #ffd700; 
+            box-shadow: 0 0 50px rgba(0,0,0,0.8); z-index: 100; padding: 25px;
+        }
+        .modal-header-title { color: #ffd700; font-size: 1.6rem; font-weight: bold; text-transform: uppercase; }
+        .modal-big-price { font-size: 2.8rem; color: #ffd700; font-weight: 900; margin: 15px 0; }
+        
+        .details-box { background: #1a1a1a; padding: 15px; border-radius: 10px; text-align: left; margin: 15px 0; }
+        .details-box p { margin: 8px 0; font-size: 0.9rem; }
+        .details-box b { color: #ffd700; }
+
+        input { width: 100%; padding: 12px; margin: 10px 0; background: #000; border: 1px solid #333; border-radius: 5px; color: white; box-sizing: border-box; }
+        .btn-yellow { background: #ffd700; color: black; width: 100%; border: none; padding: 15px; border-radius: 8px; font-weight: bold; cursor: pointer; text-transform: uppercase; }
+
+        #interac-info { display: none; margin-top: 15px; text-align: left; background: #111; padding: 15px; border-radius: 10px; font-size: 0.9rem; }
+        #overlay { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 99; }
+        .floating-contact { position: fixed; bottom: 20px; right: 20px; background: #ffd700; color: black; padding: 15px 20px; border-radius: 50px; text-decoration: none; font-weight: bold; z-index: 99; }
     </style>
 </head>
 <body>
+
+<div id="overlay" onclick="closeModal()"></div>
+
 <div class="container">
     <a href="index.html" class="btn-back">← Retour</a>
     <h1>Options pour SUV</h1>
-    <div class="option-card" onclick="showPayment('SUV - Lavage + Détail', '250$', '75$')">
+    
+    <div class="option-card" onclick="openModal('SUV - Lavage + Détail', '250$', '75$', 'Nettoyage SUV', 'Shampoing complet', 'N/A')">
         <h3>Lavage + Détail</h3>
         <p class="price">250$</p>
         <p class="depot-text">Dépôt requis (30%) : 75$</p>
     </div>
-    <div class="option-card" onclick="showPayment('SUV - Vitres Teintées', '300$', '90$')">
+
+    <div class="option-card" onclick="openModal('SUV - Vitres Teintées', '300$', '90$', 'N/A', 'N/A', 'Protection UV Complète')">
         <h3>Vitres Teintées</h3>
         <p class="price">300$</p>
         <p class="depot-text">Dépôt requis (30%) : 90$</p>
     </div>
-    <div class="option-card" onclick="showPayment('SUV - Combo Premium', '550$', '165$')">
+
+    <div class="option-card" style="border: 2px solid #ffd700;" onclick="openModal('SUV - Combo Premium', '500$', '150$', 'Décontamination SUV', 'Détail Intérieur de luxe', 'Teintage inclus')">
         <h3>Combo Premium</h3>
-        <p class="price">550$</p>
-        <p class="depot-text">Dépôt requis (30%) : 165$</p>
+        <p class="price">500$</p>
+        <p class="depot-text">Dépôt requis (30%) : 150$</p>
     </div>
 </div>
 
 <div id="payment-modal">
-    <h2 id="modal-title" style="color:#ffd700"></h2>
-    <p>Prix total : <span id="modal-total"></span></p>
-    <hr>
-    <p>Envoyez votre dépôt de :</p>
-    <h2 id="modal-depot" style="background:#ffd700; color:black; display:inline-block; padding:10px; border-radius:10px;"></h2>
-    <div style="margin-top:20px; text-align:left; background:#111; padding:15px; border-radius:10px; font-size:0.9rem;">
+    <div class="modal-header-title" id="m-title">FORMAT SUV</div>
+    <div id="m-subtitle" style="color:#888; font-size:0.8rem;">Forfait Premium Adapté</div>
+    <div class="modal-big-price" id="m-total">500$</div>
+
+    <div class="details-box" id="m-list">
+        </div>
+
+    <div id="booking-step">
+        <input type="text" id="car-model" placeholder="Modèle et année du véhicule">
+        <button class="btn-yellow" onclick="showInterac()">Confirmer & Payer le dépôt</button>
+    </div>
+
+    <div id="interac-info">
+        <p style="text-align:center; font-weight:bold; color:#ffd700; margin-bottom:10px;">Dépôt à envoyer : <span id="m-depot"></span></p>
         <p><strong>Virement Interac :</strong> Glowshinecar@gmail.com</p>
         <p><strong>Question :</strong> Voiture</p>
         <p><strong>Réponse :</strong> GlowShine</p>
     </div>
-    <button onclick="closeModal()" style="margin-top:20px; background:none; border:1px solid #888; color:white; padding:10px; cursor:pointer; border-radius:5px;">Fermer</button>
+
+    <button onclick="closeModal()" style="margin-top:15px; background:none; border:none; color:#888; cursor:pointer; text-decoration:underline;">Fermer</button>
 </div>
 
 <a href="contact.html" class="floating-contact">💬 Nous contacter</a>
 
 <script>
-    function showPayment(title, total, depot) {
-        document.getElementById('modal-title').innerText = title;
-        document.getElementById('modal-total').innerText = total;
-        document.getElementById('modal-depot').innerText = depot;
+    function openModal(title, total, depot, ext, int, tint) {
+        document.getElementById('m-title').innerText = title;
+        document.getElementById('m-total').innerText = total;
+        document.getElementById('m-depot').innerText = depot;
+        
+        let details = "";
+        if(ext !== 'N/A') details += `<p>✨ <b>Lavage :</b> ${ext}</p>`;
+        if(int !== 'N/A') details += `<p>🧼 <b>Intérieur :</b> ${int}</p>`;
+        if(tint !== 'N/A') details += `<p>🕶️ <b>Teintage :</b> ${tint}</p>`;
+        document.getElementById('m-list').innerHTML = details;
+
+        document.getElementById('booking-step').style.display = 'block';
+        document.getElementById('interac-info').style.display = 'none';
         document.getElementById('payment-modal').style.display = 'block';
+        document.getElementById('overlay').style.display = 'block';
     }
-    function closeModal() { document.getElementById('payment-modal').style.display = 'none'; }
+
+    function showInterac() {
+        if(document.getElementById('car-model').value === "") {
+            alert("Veuillez entrer le modèle de votre voiture");
+            return;
+        }
+        document.getElementById('booking-step').style.display = 'none';
+        document.getElementById('interac-info').style.display = 'block';
+    }
+
+    function closeModal() {
+        document.getElementById('payment-modal').style.display = 'none';
+        document.getElementById('overlay').style.display = 'none';
+    }
 </script>
 </body>
 </html>
