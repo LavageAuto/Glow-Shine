@@ -4,146 +4,30 @@
 <meta charset="UTF-8">
 <title>GlowShine Car | Accueil</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <style>
-  body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #0e0e0e;
-    color: #f5f5f5;
-    overflow-x: hidden;
-  }
+body { margin:0; font-family:Arial, Helvetica, sans-serif; background:#0e0e0e; color:#f5f5f5; overflow-x:hidden; }
 
-  /* CINÉMATIQUE */
-  #cinematic {
-    position: fixed;
-    inset: 0;
-    background: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    z-index: 9999;
-    overflow: hidden;
-  }
+/* CINÉMATIQUE */
+#cinematic { position: fixed; inset:0; background:black; display:flex; flex-direction:column; align-items:center; justify-content:center; z-index:9999; }
+#car { width:400px; position:absolute; left:-500px; bottom:50px; animation:carSlide 5s forwards; }
+@keyframes carSlide { 0% {left:-500px;} 100% {left:50%; transform:translateX(-50%);} }
+#company-name { font-size:4rem; color:#ffd700; text-shadow:0 0 20px #ffd700,0 0 40px #ffd700,0 0 60px #ffcc00; opacity:0; animation:fadeInText 2s forwards 1s; }
+#slogan { font-size:1.5rem; color:#ccc; margin-top:15px; opacity:0; animation:fadeInText 2s forwards 2.5s; }
+@keyframes fadeInText { from{opacity:0; transform:translateY(20px);} to{opacity:1; transform:translateY(0);} }
+@keyframes fadeOutCinematic { to{opacity:0; visibility:hidden;} }
 
-  #car {
-    width: 400px;
-    position: absolute;
-    left: -500px;
-    bottom: 50px;
-    animation: carSlide 5s forwards;
-  }
-
-  @keyframes carSlide {
-    0% { left: -500px; }
-    100% { left: 50%; transform: translateX(-50%); }
-  }
-
-  #company-name {
-    font-size: 4rem;
-    color: #ffd700;
-    text-shadow: 0 0 20px #ffd700, 0 0 40px #ffd700, 0 0 60px #ffcc00;
-    opacity: 0;
-    animation: fadeInText 2s forwards 1s;
-  }
-
-  #slogan {
-    font-size: 1.5rem;
-    color: #ccc;
-    margin-top: 15px;
-    opacity: 0;
-    animation: fadeInText 2s forwards 2.5s;
-  }
-
-  @keyframes fadeInText {
-    from { opacity: 0; transform: translateY(20px);}
-    to { opacity: 1; transform: translateY(0);}
-  }
-
-  @keyframes fadeOutCinematic {
-    to { opacity: 0; visibility: hidden; }
-  }
-
-  header {
-    background: linear-gradient(135deg, #000, #1c1c1c);
-    padding: 80px 20px;
-    text-align: center;
-  }
-
-  header h1 {
-    color: #ffd700;
-    font-size: 3rem;
-  }
-
-  section {
-    max-width: 1100px;
-    margin: auto;
-    padding: 60px 20px;
-  }
-
-  h2 { color: #ffd700; margin-bottom: 20px; }
-
-  .cards {
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .card {
-    background: #1a1a1a;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-    width: 300px;
-    line-height: 1.6;
-    color: #ccc;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-
-  .card h3 {
-    color: #ffd700;
-    margin-bottom: 15px;
-  }
-
-  .price {
-    color: #ffd700;
-    font-weight: bold;
-  }
-
-  .btn {
-    display: inline-block;
-    margin-top: 20px;
-    padding: 12px 28px;
-    background: #ffd700;
-    color: #000;
-    text-decoration: none;
-    border-radius: 30px;
-    font-weight: bold;
-    text-align: center;
-  }
-
-  .depot {
-    margin-top: 30px;
-    color: #ffd700;
-    font-weight: bold;
-    text-align: center;
-  }
-
-  footer {
-    text-align: center;
-    padding: 25px;
-    background: #000;
-    color: #777;
-  }
-
-  @media(max-width: 950px) {
-    .cards { flex-direction: column; align-items: center; }
-    .card { width: 80%; }
-  }
+header { background: linear-gradient(135deg,#000,#1c1c1c); padding:80px 20px; text-align:center; }
+header h1 { color:#ffd700; font-size:3rem; }
+section { max-width:1100px; margin:auto; padding:60px 20px; }
+h2 { color:#ffd700; margin-bottom:20px; }
+.cards { display:flex; gap:20px; flex-wrap:wrap; justify-content:center; }
+.card { background:#1a1a1a; padding:25px; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.6); width:300px; line-height:1.6; color:#ccc; display:flex; flex-direction:column; justify-content:space-between; }
+.card h3 { color:#ffd700; margin-bottom:15px; }
+.price { color:#ffd700; font-weight:bold; }
+.btn { display:inline-block; margin-top:20px; padding:12px 28px; background:#ffd700; color:#000; text-decoration:none; border-radius:30px; font-weight:bold; text-align:center; }
+.depot { margin-top:30px; color:#ffd700; font-weight:bold; text-align:center; }
+footer { text-align:center; padding:25px; background:#000; color:#777; }
+@media(max-width:950px) { .cards { flex-direction:column; align-items:center; } .card { width:80%; } }
 </style>
 </head>
 
@@ -162,11 +46,8 @@
 </header>
 
 <section>
-
   <h2>Nos services</h2>
   <div class="cards">
-
-    <!-- SEDAN -->
     <div class="card">
       <h3>Sedan</h3>
       <p>Lavage + Détail : <span class="price">200$</span></p>
@@ -174,8 +55,6 @@
       <p>Combo Premium : <span class="price">450$</span></p>
       <a class="btn" href="contact.html">Prendre rendez-vous</a>
     </div>
-
-    <!-- SUV / CROSSOVER -->
     <div class="card">
       <h3>SUV / Crossover</h3>
       <p>Lavage + Détail : <span class="price">250$</span></p>
@@ -183,8 +62,6 @@
       <p>Combo Premium : <span class="price">550$</span></p>
       <a class="btn" href="contact.html">Prendre rendez-vous</a>
     </div>
-
-    <!-- TRUCK / VAN -->
     <div class="card">
       <h3>Truck / Van</h3>
       <p>Lavage + Détail : <span class="price">300$</span></p>
@@ -192,11 +69,8 @@
       <p>Combo Premium : <span class="price">700$</span></p>
       <a class="btn" href="contact.html">Prendre rendez-vous</a>
     </div>
-
   </div>
-
   <p class="depot">⚠️ Dépôt obligatoire de 25% pour confirmer le rendez-vous.</p>
-
 </section>
 
 <footer>© 2026 GlowShine Car</footer>
@@ -213,93 +87,92 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>GlowShine Car | Rendez-vous</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>GlowShine Car | Rendez-vous</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #0e0e0e;
-      color: #f5f5f5;
-    }
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #0e0e0e;
+  color: #f5f5f5;
+}
 
-    header {
-      background: #000;
-      padding: 60px 20px;
-      text-align: center;
-    }
+header {
+  background: #000;
+  padding: 60px 20px;
+  text-align: center;
+}
 
-    header h1 {
-      color: #ffd700;
-      font-size: 2.8rem;
-    }
+header h1 {
+  color: #ffd700;
+  font-size: 2.8rem;
+}
 
-    section {
-      max-width: 900px;
-      margin: auto;
-      padding: 60px 20px;
-    }
+section {
+  max-width: 900px;
+  margin: auto;
+  padding: 60px 20px;
+}
 
-    h2 {
-      color: #ffd700;
-      margin-bottom: 15px;
-    }
+h2 {
+  color: #ffd700;
+  margin-bottom: 15px;
+}
 
-    .box {
-      background: #1a1a1a;
-      padding: 30px;
-      border-radius: 12px;
-      margin-bottom: 30px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.6);
-      line-height: 1.7;
-      color: #ccc;
-    }
+.box {
+  background: #1a1a1a;
+  padding: 30px;
+  border-radius: 12px;
+  margin-bottom: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  line-height: 1.7;
+  color: #ccc;
+}
 
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
-      border-radius: 8px;
-      border: none;
-      background: #2a2a2a;
-      color: #fff;
-    }
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: none;
+  background: #2a2a2a;
+  color: #fff;
+}
 
-    input::placeholder, textarea::placeholder {
-      color: #ccc;
-    }
+input::placeholder, textarea::placeholder {
+  color: #ccc;
+}
 
-    button {
-      background: #ffd700;
-      color: #000;
-      padding: 12px 25px;
-      border: none;
-      border-radius: 25px;
-      font-weight: bold;
-      cursor: pointer;
-    }
+button {
+  background: #ffd700;
+  color: #000;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+}
 
-    .depot {
-      margin-top: 20px;
-      color: #ffd700;
-      font-weight: bold;
-    }
+.depot {
+  margin-top: 20px;
+  color: #ffd700;
+  font-weight: bold;
+}
 
-    #thankYouMsg {
-      display: none;
-      color: #ffd700;
-      font-weight: bold;
-      margin-top: 15px;
-    }
+#thankYouMsg {
+  display: none;
+  color: #ffd700;
+  font-weight: bold;
+  margin-top: 15px;
+}
 
-    a {
-      color: #ffd700;
-      text-decoration: none;
-    }
-
-  </style>
+a {
+  color: #ffd700;
+  text-decoration: none;
+}
+</style>
 </head>
 
 <body>
@@ -334,9 +207,7 @@
       <button type="submit">Envoyer</button>
 
       <!-- DÉPÔT OBLIGATOIRE -->
-      <p class="depot">
-        ⚠️ Dépôt obligatoire de 25% pour confirmer le rendez-vous.
-      </p>
+      <p class="depot">⚠️ Dépôt obligatoire de 25% pour confirmer le rendez-vous.</p>
     </form>
 
     <!-- Message après envoi -->
@@ -347,9 +218,7 @@
   <div class="box">
     <h2>Contact</h2>
     <p>
-      <a href="mailto:Glowshinecar@gmail.com">
-        Glowshinecar@gmail.com
-      </a>
+      <a href="mailto:Glowshinecar@gmail.com">Glowshinecar@gmail.com</a>
     </p>
   </div>
 
