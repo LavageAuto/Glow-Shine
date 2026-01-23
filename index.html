@@ -3,122 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GlowShine Car | Esthétique Automobile Mobile</title>
+    <title>GlowShine Car | Accueil</title>
     <style>
-        :root {
-            --gold: #ffd700;
-            --dark: #0e0e0e;
-            --gray: #1a1a1a;
-        }
+        body { margin: 0; font-family: Arial, sans-serif; background: #0e0e0e; color: white; text-align: center; }
+        nav { display: flex; justify-content: space-between; padding: 20px; background: #1a1a1a; border-bottom: 2px solid #ffd700; }
+        .logo { font-weight: bold; color: #ffd700; font-size: 1.2rem; }
+        .nav-links a { color: white; text-decoration: none; margin-left: 15px; font-size: 0.9rem; }
+        
+        .hero { padding: 50px 20px; background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1520340356584-f9917d1eea6f?q=80&w=2000'); background-size: cover; }
+        h1 { font-size: 2.5rem; margin: 0; }
+        .slogan { color: #ffd700; font-style: italic; }
 
-        body {
-            margin: 0;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            background-color: var(--dark);
-            color: white;
-            line-height: 1.6;
-        }
+        .approche { padding: 40px 20px; background: #111; border-top: 1px solid #333; }
+        .approche h2 { color: #ffd700; }
 
-        /* Barre de Navigation */
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
-            background: rgba(0,0,0,0.9);
-            border-bottom: 1px solid #333;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+        .services { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 40px 10px; }
+        .card { background: #1a1a1a; border: 1px solid #ffd700; border-radius: 10px; width: 280px; padding: 20px; }
+        .price { font-size: 1.8rem; font-weight: bold; color: #ffd700; margin: 10px 0; }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--gold);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            margin-left: 20px;
-            font-weight: 500;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover { color: var(--gold); }
-
-        .staff-link {
-            border: 1px solid var(--gold);
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-        }
-
-        /* Hero Section */
-        .hero {
-            height: 60vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1601362840469-51e4d8d59085?auto=format&fit=crop&q=80&w=2000');
-            background-size: cover;
-            background-position: center;
-        }
-
-        .hero h1 { font-size: 3rem; margin-bottom: 10px; text-transform: uppercase; }
-        .hero p { font-size: 1.2rem; color: var(--gold); font-style: italic; }
-
-        /* Section Approche */
-        .approche {
-            padding: 60px 10%;
-            text-align: center;
-            background: var(--gray);
-            border-top: 2px solid var(--gold);
-            border-bottom: 2px solid var(--gold);
-        }
-
-        .approche h2 { color: var(--gold); text-transform: uppercase; margin-bottom: 20px; }
-        .approche p { max-width: 800px; margin: 0 auto; font-size: 1.1rem; }
-
-        /* Grille des Services */
-        .services {
-            padding: 60px 5%;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .service-card {
-            background: var(--gray);
-            padding: 40px;
-            border-radius: 15px;
-            text-align: center;
-            border: 1px solid #333;
-            transition: 0.4s;
-        }
-
-        .service-card:hover {
-            border-color: var(--gold);
-            transform: translateY(-10px);
-        }
-
-        .service-card h3 { color: var(--gold); font-size: 1.5rem; margin-bottom: 15px; }
-        .service-card .price { font-size: 2rem; font-weight: bold; margin: 15px 0; }
-
-        /* Footer */
-        footer {
-            padding: 40px;
-            text-align: center;
-            background: black;
-            border-top: 1px solid #222;
-            font-size: 0.9rem;
-            color: #666;
-        }
+        .btn-staff { color: #ffd700 !important; border: 1px solid #ffd700; padding: 5px 10px; border-radius: 5px; }
     </style>
 </head>
 <body>
@@ -126,49 +29,50 @@
     <nav>
         <div class="logo">GLOWSHINE CAR</div>
         <div class="nav-links">
-            <a href="index.html">Accueil</a>
             <a href="#services">Services</a>
-            <a href="login.html" class="staff-link">🛠️ Accès Staff</a>
+            <a href="#" onclick="verifierCode()" class="btn-staff">🛠️ Accès Staff</a>
         </div>
     </nav>
 
     <section class="hero">
         <h1>GLOWSHINE CAR</h1>
-        <p>L'esthétique automobile à votre porte</p>
+        <p class="slogan">L'éclat du succès à votre porte</p>
     </section>
 
     <section class="approche">
         <h2>Notre Approche</h2>
         <p>✨ <strong>Glow&Shine | L’éclat du succès</strong> 🚀</p>
-        <p>Chez GlowShine Car, on ne se contente pas de laver des voitures, on redonne de la puissance à votre image. Pour nous, chaque véhicule qui sort de nos mains est une preuve de notre rigueur et de notre passion.</p>
+        <p>Chez GlowShine Car, on ne se contente pas de laver des voitures, on redonne de la puissance à votre image. Chaque véhicule est une preuve de notre rigueur.</p>
     </section>
 
     <section id="services" class="services">
-        <div class="service-card">
-            <h3>SEDAN / COMPACT</h3>
-            <p>Lavage complet intérieur & extérieur</p>
+        <div class="card">
+            <h3>SEDAN</h3>
             <div class="price">100$</div>
-            <p>Durée : Env. 1h30</p>
+            <p>Intérieur & Extérieur</p>
         </div>
-
-        <div class="service-card">
-            <h3>SUV / CROSSOVER</h3>
-            <p>Lavage complet intérieur & extérieur</p>
+        <div class="card">
+            <h3>SUV</h3>
             <div class="price">130$</div>
-            <p>Durée : Env. 2h00</p>
+            <p>Intérieur & Extérieur</p>
         </div>
-
-        <div class="service-card">
-            <h3>TRUCK / 7 PLACES</h3>
-            <p>Lavage complet intérieur & extérieur</p>
+        <div class="card">
+            <h3>TRUCK</h3>
             <div class="price">160$</div>
-            <p>Durée : Env. 2h30</p>
+            <p>Intérieur & Extérieur</p>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 GlowShine Car - Laval & Environs</p>
-    </footer>
+    <script>
+        function verifierCode() {
+            var code = prompt("Entrez le code d'accès Staff :");
+            if (code === "2026") {
+                window.location.href = "login.html";
+            } else {
+                alert("Code incorrect !");
+            }
+        }
+    </script>
 
 </body>
 </html>
