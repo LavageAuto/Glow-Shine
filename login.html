@@ -59,8 +59,8 @@
         document.getElementById('loginForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const user = document.getElementById('username').value;
-            const pass = document.getElementById('password').value;
+            const user = document.getElementById('username').value.trim();
+            const pass = document.getElementById('password').value.trim();
 
             // --- TABLEAU DES ACCÈS ---
             
@@ -69,17 +69,21 @@
                 alert("Salut Boss !");
                 window.location.href = "gestion.html";
             } 
-            // 2. SK
+            // 2. NICO PETIT (Nouveau code 8372)
+            else if(user.toUpperCase() === "NICO" && pass === "8372") {
+                window.location.href = "gestion.html";
+            }
+            // 3. SK
             else if(user === "SK" && pass === "MoneyCash") {
-                window.location.href = "travaux.html";
+                window.location.href = "gestion.html";
             }
-            // 3. EVANS
-            else if(user === "EVANS" && pass === "4503") {
-                window.location.href = "travaux.html";
+            // 4. EVANS
+            else if(user.toUpperCase() === "EVANS" && pass === "4503") {
+                window.location.href = "gestion.html";
             }
-            // 4. DP
-            else if(user === "Dp" && pass === "5403") {
-                window.location.href = "travaux.html";
+            // 5. DP
+            else if(user.toUpperCase() === "DP" && pass === "5403") {
+                window.location.href = "gestion.html";
             }
             else {
                 alert("Accès refusé. Vérifie tes identifiants.");
