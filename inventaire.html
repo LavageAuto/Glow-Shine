@@ -3,24 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GlowShine | Inventaire</title>
+    <title>GlowShine | Inventaire Complet</title>
     <style>
         body { margin:0; font-family: 'Segoe UI', sans-serif; background:#0e0e0e; color:#f5f5f5; padding: 20px; display: flex; flex-direction: column; align-items: center; }
         header { width: 100%; max-width: 600px; text-align: center; padding: 20px 0; border-bottom: 2px solid #ffd700; margin-bottom: 30px; }
         header h1 { color: #ffd700; text-transform: uppercase; letter-spacing: 2px; margin: 0; font-size: 1.5rem; }
 
         .inventory-list { width: 100%; max-width: 500px; display: flex; flex-direction: column; gap: 10px; }
+        
+        .category-title { 
+            color: #ffd700; font-size: 0.8rem; font-weight: bold; margin: 25px 0 10px 0; 
+            align-self: flex-start; width: 100%; border-left: 3px solid #ffd700; padding-left: 10px;
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+
         .item { 
             background: #1a1a1a; padding: 15px; border-radius: 8px; border: 1px solid #333;
             display: flex; justify-content: space-between; align-items: center;
         }
-        .item-name { font-weight: bold; color: white; text-transform: uppercase; font-size: 0.9rem; }
-        .status { font-size: 0.7rem; padding: 5px 10px; border-radius: 5px; background: #ffd700; color: black; font-weight: bold; }
-        
-        .category-title { color: #555; font-size: 0.8rem; font-weight: bold; margin: 20px 0 5px 0; align-self: flex-start; width: 100%; max-width: 500px; text-transform: uppercase; }
+        .item-name { font-weight: bold; color: white; text-transform: uppercase; font-size: 0.85rem; }
+        .status { font-size: 0.7rem; padding: 5px 10px; border-radius: 5px; background: #222; color: #ffd700; border: 1px solid #ffd700; font-weight: bold; }
+        .status.ok { background: #ffd700; color: black; }
 
-        .back-btn { margin-top: 40px; color: #777; text-decoration: none; font-size: 0.85rem; border: 1px solid #333; padding: 10px 20px; border-radius: 5px; transition: 0.3s; }
-        .back-btn:hover { border-color: #ffd700; color: #ffd700; }
+        .back-btn { margin-top: 40px; color: #777; text-decoration: none; font-size: 0.85rem; border: 1px solid #333; padding: 12px 25px; border-radius: 5px; transition: 0.3s; }
+        .back-btn:hover { border-color: #ffd700; color: #ffd700; background: rgba(255, 215, 0, 0.05); }
     </style>
 </head>
 <body>
@@ -32,18 +38,30 @@
     <div class="inventory-list">
         
         <div class="category-title">Machines & Appareils</div>
-        <div class="item">
-            <span class="item-name">Aspirateur Wet/Dry (Eau & Poussière)</span>
-            <span class="status">OPÉRATIONNEL</span>
-        </div>
-        <div class="item">
-            <span class="item-name">Machine à vapeur / Extracteur</span>
-            <span class="status">OPÉRATIONNEL</span>
-        </div>
-        <div class="item">
-            <span class="item-name">Laveuse à pression</span>
-            <span class="status">OPÉRATIONNEL</span>
-        </div>
+        <div class="item"><span class="item-name">Aspirateur Wet/Dry (Eau/Poussière)</span><span class="status ok">OPÉRATIONNEL</span></div>
+        <div class="item"><span class="item-name">Extracteur à tapis (Shampouineuse)</span><span class="status ok">OPÉRATIONNEL</span></div>
+        <div class="item"><span class="item-name">Machine à vapeur (Steam)</span><span class="status ok">OPÉRATIONNEL</span></div>
+        <div class="item"><span class="item-name">Laveuse à pression (Pressure Washer)</span><span class="status ok">OPÉRATIONNEL</span></div>
+        <div class="item"><span class="item-name">Polisseuse Orbitale</span><span class="status ok">OPÉRATIONNEL</span></div>
 
         <div class="category-title">Produits Chimiques</div>
-        <div class="item"><span class="item-name">Savon
+        <div class="item"><span class="item-name">Savon Mousse Snow Foam</span><span class="status">STOCK OK</span></div>
+        <div class="item"><span class="item-name">Dégraissant Moteur/Jantes</span><span class="status">STOCK OK</span></div>
+        <div class="item"><span class="item-name">APC (All Purpose Cleaner)</span><span class="status">STOCK OK</span></div>
+        <div class="item"><span class="item-name">Protection Céramique (Spray)</span><span class="status">STOCK OK</span></div>
+        <div class="item"><span class="item-name">Cire Rapide (Quick Detailer)</span><span class="status">STOCK OK</span></div>
+        <div class="item"><span class="item-name">Nettoyant Vitres (Sans traces)</span><span class="status">STOCK OK</span></div>
+        <div class="item"><span class="item-name">Dressage Pneus (Tire Shine)</span><span class="status">STOCK OK</span></div>
+
+        <div class="category-title">Accessoires & Consommables</div>
+        <div class="item"><span class="item-name">Microfibres Séchage (Gros format)</span><span class="status">10 UNITÉS</span></div>
+        <div class="item"><span class="item-name">Microfibres Intérieur/Extérieur</span><span class="status">40 UNITÉS</span></div>
+        <div class="item"><span class="item-name">Brosses Cuir & Tissus</span><span class="status">KIT COMPLET</span></div>
+        <div class="item"><span class="item-name">Pinceaux Détailing</span><span class="status">KIT COMPLET</span></div>
+        <div class="item"><span class="item-name">Gants Nitrile</span><span class="status">1 BOÎTE</span></div>
+    </div>
+
+    <a href="admin-panel.html" class="back-btn">← RETOUR PANEL BOSS</a>
+
+</body>
+</html>
