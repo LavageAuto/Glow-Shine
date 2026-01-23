@@ -3,38 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Espace Travail - GlowShine Car</title>
+    <title>Espace Équipe - GlowShine</title>
     <style>
-        body { background: #0e0e0e; color: white; font-family: Arial, sans-serif; padding: 20px; text-align: center; }
-        .container { max-width: 900px; margin: auto; }
-        h1 { color: #ffd700; margin-bottom: 30px; border-bottom: 2px solid #ffd700; padding-bottom: 10px; }
+        body { background: #0e0e0e; color: white; font-family: sans-serif; display: flex; justify-content: center; padding: 20px; }
+        .container { width: 100%; max-width: 400px; text-align: center; }
+        h1 { color: #ffd700; margin-bottom: 30px; font-size: 1.5rem; }
         
-        /* Style du cadre qui contient le tableau Google */
-        .sheet-container { 
-            width: 100%; height: 500px; background: white; border-radius: 10px; 
-            overflow: hidden; border: 3px solid #ffd700; margin-top: 20px;
+        .staff-button { 
+            display: block; background: #1a1a1a; color: white; text-decoration: none; 
+            padding: 25px; margin-bottom: 15px; border-radius: 15px; border: 1px solid #333;
+            font-size: 1.2rem; font-weight: bold; transition: 0.3s;
         }
-        iframe { width: 100%; height: 100%; border: none; }
+        .staff-button:hover { border-color: #ffd700; background: #222; }
+        .staff-button span { color: #ffd700; display: block; font-size: 0.8rem; margin-top: 5px; font-weight: normal; }
 
-        .btn-logout { background: #ff4444; color: white; text-decoration: none; padding: 10px 20px; border-radius: 5px; float: right; font-weight: bold; }
-        .info-box { background: #1a1a1a; padding: 15px; margin-top: 20px; border-radius: 10px; color: #ccc; font-size: 0.9rem; }
+        .logout { color: #ff4444; text-decoration: none; font-size: 0.9rem; margin-top: 30px; display: inline-block; }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <a href="index.html" class="btn-logout">Déconnexion</a>
-    <h1>Horaire des Employés</h1>
+    <h1>Planning Équipe</h1>
+    <p style="color: #888; margin-bottom: 30px;">Clique sur ton nom pour voir tes rendez-vous.</p>
 
-    <p>Sk, voici tes rendez-vous pour la semaine :</p>
+    <a href="#" class="staff-button">👤 SK <span>Voir mon horaire →</span></a>
+    <a href="#" class="staff-button">👤 EVANS <span>Voir mon horaire →</span></a>
+    <a href="#" class="staff-button">👤 NATHAN <span>Voir mon horaire →</span></a>
+    <a href="#" class="staff-button">👤 NICO <span>Voir mon horaire →</span></a>
 
-    <div class="sheet-container">
-        <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vR_TON_CODE_ICI/pubhtml?widget=true&amp;headers=false"></iframe>
-    </div>
-
-    <div class="info-box">
-        <p>💡 <strong>Note pour l'équipe :</strong> L'horaire est mis à jour en temps réel par la direction. En cas de changement de dernière minute, vous recevrez une notification par message.</p>
-    </div>
+    <a href="index.html" class="logout">Se déconnecter</a>
 </div>
 
 </body>
