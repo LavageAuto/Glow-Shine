@@ -161,13 +161,6 @@ button {
   font-weight: bold;
 }
 
-#thankYouMsg {
-  display: none;
-  color: #ffd700;
-  font-weight: bold;
-  margin-top: 15px;
-}
-
 a {
   color: #ffd700;
   text-decoration: none;
@@ -200,21 +193,18 @@ a {
   <!-- FORMULAIRE DE RENDEZ-VOUS -->
   <div class="box">
     <h2>Prendre rendez-vous</h2>
-    <form id="rendezvousForm">
-      <input type="text" name="name" placeholder="Nom complet" required>
-      <input type="tel" name="phone" placeholder="Numéro de téléphone" required>
-      <textarea name="message" placeholder="Message ou service désiré"></textarea>
+    <form action="mailto:Glowshinecar@gmail.com" method="POST" enctype="text/plain">
+      <input type="text" name="Nom" placeholder="Nom complet" required>
+      <input type="tel" name="Téléphone" placeholder="Numéro de téléphone" required>
+      <textarea name="Message" placeholder="Message ou service désiré"></textarea>
       <button type="submit">Envoyer</button>
 
       <!-- DÉPÔT OBLIGATOIRE -->
       <p class="depot">⚠️ Dépôt obligatoire de 25% pour confirmer le rendez-vous.</p>
     </form>
-
-    <!-- Message après envoi -->
-    <p id="thankYouMsg">Merci ! Votre demande a bien été envoyée.</p>
   </div>
 
-  <!-- CONTACT EMAIL -->
+  <!-- CONTACT EMAIL DIRECT -->
   <div class="box">
     <h2>Contact</h2>
     <p>
@@ -223,17 +213,6 @@ a {
   </div>
 
 </section>
-
-<script>
-  const form = document.getElementById("rendezvousForm");
-  const thankYouMsg = document.getElementById("thankYouMsg");
-
-  form.addEventListener("submit", function(e) {
-    e.preventDefault(); // Empêche l’erreur
-    thankYouMsg.style.display = "block"; // Affiche le message
-    form.reset(); // Vide les champs
-  });
-</script>
 
 </body>
 </html>
