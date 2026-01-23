@@ -3,55 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Espace Équipe - GlowShine</title>
+    <title>GlowShine | Gestion Staff</title>
     <style>
-        body { background: #0e0e0e; color: white; font-family: sans-serif; display: flex; justify-content: center; padding: 20px; margin: 0; }
-        .container { width: 100%; max-width: 400px; text-align: center; }
-        h1 { color: #ffd700; margin-bottom: 10px; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 2px; }
-        .subtitle { color: #888; margin-bottom: 30px; font-size: 0.9rem; }
+        body { margin:0; font-family: 'Segoe UI', sans-serif; background:#0e0e0e; color:#f5f5f5; padding: 20px; }
+        h2 { color: #ffd700; text-align: center; text-transform: uppercase; letter-spacing: 2px; margin-top: 40px; margin-bottom: 40px; }
         
-        .staff-button { 
-            display: block; background: #1a1a1a; color: white; text-decoration: none; 
-            padding: 20px; margin-bottom: 15px; border-radius: 12px; border: 1px solid #333;
-            font-size: 1.2rem; font-weight: bold; transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        .staff-grid { 
+            display: flex; 
+            flex-direction: column; 
+            gap: 15px; 
+            max-width: 350px; 
+            margin: auto; 
         }
-        .staff-button:active { transform: scale(0.98); background: #222; border-color: #ffd700; }
-        .staff-button span { color: #ffd700; display: block; font-size: 0.75rem; margin-top: 5px; font-weight: normal; text-transform: uppercase; }
 
-        .admin-btn { border: 1px dashed #ffd700; margin-top: 30px; background: #111; }
-        .logout { color: #ff4444; text-decoration: none; font-size: 0.9rem; margin-top: 40px; display: inline-block; border: 1px solid #ff4444; padding: 8px 20px; border-radius: 50px; }
+        .staff-btn { 
+            background: #1a1a1a; 
+            color: white; 
+            padding: 25px; 
+            text-align: center; 
+            text-decoration: none; 
+            border-radius: 12px; 
+            border: 1px solid #333; 
+            font-weight: bold; 
+            font-size: 1.1rem;
+            transition: 0.3s;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+        }
+        
+        .staff-btn:hover { border-color: #ffd700; background: #222; transform: translateY(-2px); }
+
+        /* Bouton Spécial pour Toi (Boss) */
+        .boss-btn { 
+            border: 2px dashed #ffd700; 
+            color: #ffd700; 
+            margin-top: 30px; 
+            background: rgba(255, 215, 0, 0.05);
+        }
+        
+        .logout-btn {
+            display: block;
+            text-align: center;
+            margin-top: 50px;
+            color: #777;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+        .logout-btn:hover { color: #ff4444; }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>PLANNINGS</h1>
-    <p class="subtitle">Clique sur ton nom pour voir tes jobs</p>
+    <h2>Tableau de Bord Admin</h2>
 
-    <a href="https://docs.google.com/document/d/1nYAKwhjy5SqWVmdwvcM5TCiSl4vHB6CVMCFKwM5t21s/edit?usp=sharing" target="_blank" class="staff-button">
-        👤 SK <span>Voir mon horaire →</span>
-    </a>
+    <div class="staff-grid">
+        <a href="sk-planning.html" class="staff-btn">SK</a>
+        <a href="evans-planning.html" class="staff-btn">EVANS</a>
+        <a href="dp-planning.html" class="staff-btn">DP</a> <a href="admin-panel.html" class="staff-btn boss-btn">GESTION GLOBALE (BOSS)</a>
+    </div>
 
-    <a href="https://docs.google.com/document/d/1cvQN24bctnL6mACYS_Zd8Oyl1cKpv-o7uGsQ-30tiqQ/edit?usp=sharing" target="_blank" class="staff-button">
-        👤 EVANS <span>Voir mon horaire →</span>
-    </a>
-
-    <a href="https://docs.google.com/document/d/10J8a439u3tCUYzO9teD9lRHsYPxDPip1Ku6pIYFzHfk/edit?usp=sharing" target="_blank" class="staff-button">
-        👤 NATHAN <span>Voir mon horaire →</span>
-    </a>
-
-    <a href="https://docs.google.com/document/d/1taAyhrLvv_9pc8PSb27k5TM2YmMOO_sl2aa0hv4Rj4c/edit?usp=sharing" target="_blank" class="staff-button">
-        👤 NICO <span>Voir mon horaire →</span>
-    </a>
-
-    <a href="https://docs.google.com/document/u/0/" target="_blank" class="staff-button admin-btn">
-        ⭐ GESTION (BOSS) <span>Modifier tous les docs →</span>
-    </a>
-
-    <br>
-    <a href="index.html" class="logout">Déconnexion</a>
-</div>
+    <a href="index.html" class="logout-btn">← Se déconnecter</a>
 
 </body>
 </html>
