@@ -1,125 +1,151 @@
-<style>
-    /* 1. L'ANIMATION DU REFLET (SHINE) */
-    @keyframes goldShine {
-        0% { background-position: -200%; }
-        100% { background-position: 200%; }
-    }
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GlowShine Car - Tarifs</title>
+    <style>
+        /* STYLE DU DÉCOR (L'IMAGE EN FOND) */
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            font-family: 'Arial', sans-serif;
+            color: white;
+            /* L'image du char en arrière-plan */
+            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center top;
+        }
 
-    /* 2. L'ANIMATION DE PULSATION (GLOW) */
-    @keyframes goldPulse {
-        0% { transform: scale(1); filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.4)); }
-        100% { transform: scale(1.05); filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.9)); }
-    }
+        /* L'ANIMATION DE L'OR QUI BOUGE */
+        @keyframes goldShine {
+            0% { background-position: -200%; }
+            100% { background-position: 200%; }
+        }
 
-    /* 3. STYLE DES CARTES */
-    .pricing-wrapper {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        flex-wrap: wrap;
-        background-color: #000;
-        padding: 50px 10px;
-        font-family: 'Arial', sans-serif;
-    }
+        @keyframes goldPulse {
+            0% { transform: scale(1); filter: drop-shadow(0 0 5px rgba(255, 215, 0, 0.4)); }
+            100% { transform: scale(1.05); filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8)); }
+        }
 
-    .pricing-card {
-        background: #111;
-        border: 1px solid #222;
-        border-radius: 20px;
-        width: 300px;
-        padding: 35px;
-        text-align: center;
-        color: white;
-        transition: 0.3s;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    }
+        .pricing-section {
+            padding: 100px 20px;
+            text-align: center;
+        }
 
-    .pricing-card:hover {
-        border-color: #ffd700;
-        transform: translateY(-5px);
-    }
+        .section-title {
+            color: #ffd700;
+            font-size: 2rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-bottom: 50px;
+            text-shadow: 2px 2px 10px rgba(0,0,0,1);
+        }
 
-    .pricing-card h2 {
-        color: #ffd700;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        margin-bottom: 25px;
-    }
+        .cards-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
 
-    .pricing-card p {
-        margin: 12px 0;
-        font-size: 1.1rem;
-        color: #ddd;
-    }
+        /* TES BOITES NOIRES */
+        .card {
+            background: rgba(26, 26, 26, 0.95); /* Noir un peu transparent pour le décor */
+            border: 1px solid #333;
+            border-radius: 20px;
+            width: 300px;
+            padding: 40px 20px;
+            transition: 0.3s;
+            backdrop-filter: blur(5px);
+        }
 
-    /* 4. LE TEXTE COMBO PREMIUM DORÉ */
-    .combo-gold {
-        display: inline-block;
-        margin: 20px 0;
-        font-weight: 900;
-        font-size: 1.4rem;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-        
-        /* Couleur Or avec reflet blanc qui bouge */
-        background: linear-gradient(90deg, #ffd700, #fff, #ffd700);
-        background-size: 200% auto;
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        
-        /* Application des animations */
-        animation: goldShine 3s linear infinite, goldPulse 1.5s ease-in-out infinite alternate;
-    }
+        .card:hover {
+            border-color: #ffd700;
+        }
 
-    /* 5. LE BOUTON */
-    .btn-glow {
-        display: inline-block;
-        margin-top: 20px;
-        padding: 12px 30px;
-        border: 1px solid #ffd700;
-        color: #ffd700;
-        text-decoration: none;
-        border-radius: 50px;
-        font-weight: bold;
-        text-transform: uppercase;
-        font-size: 0.9rem;
-        transition: 0.3s;
-    }
+        .card h2 {
+            color: #ffd700;
+            margin-top: 0;
+            text-transform: uppercase;
+        }
 
-    .btn-glow:hover {
-        background: #ffd700;
-        color: #000;
-        box-shadow: 0 0 15px #ffd700;
-    }
-</style>
+        .card p {
+            font-size: 1.1rem;
+            color: #e0e0e0;
+        }
 
-<div class="pricing-wrapper">
+        /* L'EFFET COMBO PREMIUM */
+        .combo-gold {
+            display: inline-block;
+            margin: 20px 0;
+            font-weight: 900;
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            /* Dégradé or brillant */
+            background: linear-gradient(90deg, #ffd700, #fff, #ffd700);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            /* Les 2 animations ensemble */
+            animation: goldShine 3s linear infinite, goldPulse 1.5s ease-in-out infinite alternate;
+        }
+
+        /* LE BOUTON */
+        .btn-voir {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            border: 1px solid #ffd700;
+            color: #ffd700;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-voir:hover {
+            background: #ffd700;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+
+<div class="pricing-section">
+    <div class="section-title">Sélectionnez votre type de véhicule</div>
     
-    <div class="pricing-card">
-        <h2>Sedan</h2>
-        <p>Lavage + Détail — 200$</p>
-        <p>Vitres Teintées — 200$</p>
-        <div class="combo-gold">Combo Premium - 450$</div>
-        <br>
-        <a href="#booking" class="btn-glow">Voir les options</a>
-    </div>
+    <div class="cards-container">
+        <div class="card">
+            <h2>Sedan</h2>
+            <p>Lavage + Détail - 200$</p>
+            <p>Vitres Teintées - 250$</p>
+            <div class="combo-gold">Combo Premium - 450$</div>
+            <br>
+            <a href="#" class="btn-voir">Voir les options</a>
+        </div>
 
-    <div class="pricing-card">
-        <h2>SUV / Crossover</h2>
-        <p>Lavage + Détail — 200$</p>
-        <p>Vitres Teintées — 300$</p>
-        <div class="combo-gold">Combo Premium - 550$</div>
-        <br>
-        <a href="#booking" class="btn-glow">Voir les options</a>
-    </div>
+        <div class="card">
+            <h2>SUV / Crossover</h2>
+            <p>Lavage + Détail - 250$</p>
+            <p>Vitres Teintées - 300$</p>
+            <div class="combo-gold">Combo Premium - 550$</div>
+            <br>
+            <a href="#" class="btn-voir">Voir les options</a>
+        </div>
 
-    <div class="pricing-card">
-        <h2>Truck / Van</h2>
-        <p>Lavage + Détail — 200$</p>
-        <p>Vitres Teintées — 400$</p>
-        <div class="combo-gold">Combo Premium - 700$</div>
-        <br>
-        <a href="#booking" class="btn-glow">Voir les options</a>
+        <div class="card">
+            <h2>Truck / Van</h2>
+            <p>Lavage + Détail - 300$</p>
+            <p>Vitres Teintées - 400$</p>
+            <div class="combo-gold">Combo Premium - 700$</div>
+            <br>
+            <a href="#" class="btn-voir">Voir les options</a>
+        </div>
     </div>
-
 </div>
+
+</body>
+</html>
