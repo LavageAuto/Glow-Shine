@@ -1,56 +1,125 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Espace Équipe - GlowShine</title>
     <style>
-        body { background: #0e0e0e; color: white; font-family: sans-serif; display: flex; justify-content: center; padding: 20px; margin: 0; }
-        .container { width: 100%; max-width: 400px; text-align: center; }
-        h1 { color: #ffd700; margin-bottom: 10px; font-size: 1.8rem; text-transform: uppercase; letter-spacing: 2px; }
-        .subtitle { color: #888; margin-bottom: 30px; font-size: 0.9rem; }
-        
-        .staff-button { 
-            display: block; background: #1a1a1a; color: white; text-decoration: none; 
-            padding: 20px; margin-bottom: 15px; border-radius: 12px; border: 1px solid #333;
-            font-size: 1.2rem; font-weight: bold; transition: 0.3s;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+        /* --- STYLE GÉNÉRAL DES CARTES --- */
+        .pricing-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+            background-color: #0e0e0e;
+            padding: 40px 10px;
+            font-family: sans-serif;
         }
-        .staff-button:active { transform: scale(0.98); background: #222; border-color: #ffd700; }
-        .staff-button span { color: #ffd700; display: block; font-size: 0.75rem; margin-top: 5px; font-weight: normal; text-transform: uppercase; }
 
-        .admin-btn { border: 1px dashed #ffd700; margin-top: 30px; background: #111; }
-        .logout { color: #ff4444; text-decoration: none; font-size: 0.9rem; margin-top: 40px; display: inline-block; border: 1px solid #ff4444; padding: 8px 20px; border-radius: 50px; }
+        .card {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 15px;
+            width: 300px;
+            padding: 30px;
+            text-align: center;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: #ffd700;
+        }
+
+        .card h2 {
+            color: #ffd700;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+
+        .card p {
+            margin: 10px 0;
+            color: #ccc;
+        }
+
+        /* --- L'EFFET OR QUI BOUGE (COMBO PREMIUM) --- */
+        @keyframes shine {
+            0% { background-position: -200%; }
+            100% { background-position: 200%; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 0.9; }
+            100% { transform: scale(1.08); opacity: 1; }
+        }
+
+        .combo-premium {
+            display: inline-block;
+            margin: 20px 0;
+            font-weight: 900;
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            
+            /* Couleur Or avec reflet blanc */
+            background: linear-gradient(90deg, #ffd700, #fff, #ffd700);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            
+            /* Animation de brillance et de pulsation */
+            animation: shine 3s linear infinite, pulse 1.5s ease-in-out infinite alternate;
+            
+            /* Lueur dorée autour */
+            filter: drop-shadow(0 0 10px rgba(255, 215, 0, 0.7));
+        }
+
+        /* --- STYLE DU BOUTON --- */
+        .btn-options {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 25px;
+            border: 1px solid #ffd700;
+            color: #ffd700;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn-options:hover {
+            background: #ffd700;
+            color: black;
+        }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <h1>PLANNINGS</h1>
-    <p class="subtitle">Clique sur ton nom pour voir tes jobs</p>
+<div class="pricing-container">
+    
+    <div class="card">
+        <h2>Sedan</h2>
+        <p>Lavage + Détail - 200$</p>
+        <p>Vitres Teintées - 200$</p>
+        <div class="combo-premium">Combo Premium - 450$</div>
+        <br>
+        <a href="#" class="btn-options">Voir les options</a>
+    </div>
 
-    <a href="https://docs.google.com/document/d/1nYAKwhjy5SqWVmdwvcM5TCiSl4vHB6CVMCFKwM5t21s/edit?usp=sharing" target="_blank" class="staff-button">
-        👤 SK <span>Voir mon horaire →</span>
-    </a>
+    <div class="card">
+        <h2>SUV / Crossover</h2>
+        <p>Lavage + Détail - 200$</p>
+        <p>Vitres Teintées - 300$</p>
+        <div class="combo-premium">Combo Premium - 550$</div>
+        <br>
+        <a href="#" class="btn-options">Voir les options</a>
+    </div>
 
-    <a href="https://docs.google.com/document/d/1cvQN24bctnL6mACYS_Zd8Oyl1cKpv-o7uGsQ-30tiqQ/edit?usp=sharing" target="_blank" class="staff-button">
-        👤 EVANS <span>Voir mon horaire →</span>
-    </a>
+    <div class="card">
+        <h2>Truck / Van</h2>
+        <p>Lavage + Détail - 200$</p>
+        <p>Vitres Teintées - 400$</p>
+        <div class="combo-premium">Combo Premium - 700$</div>
+        <br>
+        <a href="#" class="btn-options">Voir les options</a>
+    </div>
 
-    <a href="https://docs.google.com/document/d/10J8a439u3tCUYzO9teD9lRHsYPxDPip1Ku6pIYFzHfk/edit?usp=sharing" target="_blank" class="staff-button">
-        👤 NATHAN <span>Voir mon horaire →</span>
-    </a>
-
-    <a href="https://docs.google.com/document/d/1taAyhrLvv_9pc8PSb27k5TM2YmMOO_sl2aa0hv4Rj4c/edit?usp=sharing" target="_blank" class="staff-button">
-        👤 NICO <span>Voir mon horaire →</span>
-    </a>
-
-    <a href="https://docs.google.com/document/u/0/" target="_blank" class="staff-button admin-btn">
-        ⭐ GESTION (BOSS) <span>Modifier tous les docs →</span>
-    </a>
-
-    <br>
-    <a href="index.html" class="logout">Déconnexion</a>
 </div>
 
 </body>
