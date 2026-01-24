@@ -94,7 +94,6 @@
     <a href="index.html">Accueil</a>
     <a href="contact.html">Prendre Rendez-vous</a>
     <a href="#services">Nos Services</a>
-    
     <h3>🛠️ ÉQUIPE GLOWSHINE</h3>
     <a href="travaux.html" style="color: #ffd700; font-weight: bold;">🛠️ Accès Staff</a>
     <a href="login.html">Connexion Admin</a>
@@ -109,40 +108,16 @@
     <h2>Choisissez votre catégorie</h2>
     <div class="service-grid">
         <a href="choix-sedan.html" class="service-card">
-            <div class="service-box">
-                <h3>SEDAN</h3>
-                <p class="price">Lavage + Détail : 200$</p>
-                <p class="price">Vitres Teintées : 250$</p>
-                <div class="combo-gold">⭐ COMBO PREMIUM : 400$</div>
-                <br><div class="btn-select">Sélectionner</div>
-            </div>
+            <div class="service-box"><h3>SEDAN</h3><p class="price">Lavage: 200$ | Vitres: 250$</p><div class="combo-gold">⭐ COMBO : 400$</div><br><div class="btn-select">Sélectionner</div></div>
         </a>
         <a href="choix-suv.html" class="service-card">
-            <div class="service-box">
-                <h3>SUV / CROSSOVER</h3>
-                <p class="price">Lavage + Détail : 250$</p>
-                <p class="price">Vitres Teintées : 300$</p>
-                <div class="combo-gold">⭐ COMBO PREMIUM : 500$</div>
-                <br><div class="btn-select">Sélectionner</div>
-            </div>
+            <div class="service-box"><h3>SUV / CROSSOVER</h3><p class="price">Lavage: 250$ | Vitres: 300$</p><div class="combo-gold">⭐ COMBO : 500$</div><br><div class="btn-select">Sélectionner</div></div>
         </a>
         <a href="choix-truck.html" class="service-card">
-            <div class="service-box">
-                <h3>TRUCK / VAN</h3>
-                <p class="price">Lavage + Détail : 300$</p>
-                <p class="price">Vitres Teintées : 400$</p>
-                <div class="combo-gold">⭐ COMBO PREMIUM : 650$</div>
-                <br><div class="btn-select">Sélectionner</div>
-            </div>
+            <div class="service-box"><h3>TRUCK / VAN</h3><p class="price">Lavage: 300$ | Vitres: 400$</p><div class="combo-gold">⭐ COMBO : 650$</div><br><div class="btn-select">Sélectionner</div></div>
         </a>
         <a href="choix-sport-luxe.html" class="service-card">
-            <div class="service-box">
-                <h3>SPORT / LUXE</h3>
-                <p class="price">Lavage + Détail : 300$</p>
-                <p class="price">Vitres Teintées : 350$</p>
-                <div class="combo-gold">⭐ COMBO PREMIUM : 700$</div>
-                <br><div class="btn-select">Sélectionner</div>
-            </div>
+            <div class="service-box"><h3>SPORT / LUXE</h3><p class="price">Lavage: 300$ | Vitres: 350$</p><div class="combo-gold">⭐ COMBO : 700$</div><br><div class="btn-select">Sélectionner</div></div>
         </a>
     </div>
 
@@ -150,11 +125,16 @@
         <div id="discount-content">
             <h3>🎁 OFFRES EXCLUSIVES</h3>
             <p>Inscrivez votre courriel pour recevoir un <b>code promo de 10%</b> !</p>
-            <div class="discount-form">
-                <input type="email" id="email-promo" placeholder="Votre adresse courriel" required>
-                <button type="button" class="btn-submit" onclick="activateDiscount()">S'inscrire</button>
-            </div>
+            
+            <form action="https://formsubmit.co/glowshinecars@gmail.com" method="POST" class="discount-form" onsubmit="activateDiscount()" target="hidden_iframe">
+                <input type="email" name="email" id="email-promo" placeholder="Votre adresse courriel" required>
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_subject" value="Nouveau client GlowShine (Rabais 10%)">
+                <button type="submit" class="btn-submit">S'inscrire</button>
+            </form>
+            <iframe name="hidden_iframe" style="display:none;"></iframe>
         </div>
+
         <div id="coupon-result">
             <h3 style="color: #ffd700;">BIENVENUE ! ✨</h3>
             <p>Voici votre code de bienvenue :</p>
@@ -165,12 +145,7 @@
 
     <div class="approach">
         <h3>Notre Approche</h3>
-        <p>
-            ✨ Glow&Shine | L'éclat du succès 🚀 <br>
-            Votre vie brille, votre voiture aussi. 🧼 <br>
-            Expertise, Précision & Brillance extrême. <br>
-            📩 Contactez-nous pour un résultat impeccable.
-        </p>
+        <p>✨ Glow&Shine | L'éclat du succès 🚀 <br>Votre vie brille, votre voiture aussi. 🧼</p>
     </div>
 </section>
 
@@ -186,7 +161,7 @@
                 audio.volume = 0.4;
                 document.getElementById("musicText").innerText = "MUSIQUE : ON";
                 document.getElementById("musicIcon").innerText = "🔊";
-            }).catch(e => console.log("L'utilisateur doit interagir avec la page d'abord."));
+            }).catch(e => console.log("L'utilisateur doit cliquer."));
         } else {
             audio.pause();
             document.getElementById("musicText").innerText = "MUSIQUE : OFF";
@@ -194,18 +169,17 @@
         }
     }
 
-    // Fonction pour afficher le code rabais
     function activateDiscount() {
         const email = document.getElementById('email-promo').value;
         if(email.includes('@')) {
-            document.getElementById('discount-content').style.display = 'none';
-            document.getElementById('coupon-result').style.display = 'block';
-        } else {
-            alert("Veuillez entrer une adresse courriel valide.");
+            // Petit délai pour laisser le formulaire s'envoyer avant de cacher l'interface
+            setTimeout(function() {
+                document.getElementById('discount-content').style.display = 'none';
+                document.getElementById('coupon-result').style.display = 'block';
+            }, 600);
         }
     }
 
-    // Démarre la musique au premier clic sur la page
     document.addEventListener('click', function() {
         if (audio.paused) { toggleMusic(); }
     }, { once: true });
