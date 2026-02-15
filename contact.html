@@ -3,25 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - GlowShine Car</title>
+    <title>Contact - Detail Auto Glow-Shine</title>
     <style>
         body { margin:0; font-family:Arial, sans-serif; background:#0e0e0e; color:#f5f5f5; display:flex; justify-content:center; align-items:center; min-height:100vh; padding:20px; }
-        .contact-container { background:#1a1a1a; padding:40px; border-radius:15px; width:100%; max-width:500px; box-shadow:0 10px 30px rgba(0,0,0,0.5); text-align:center; position: relative; }
-        h1 { color:#ffd700; margin-bottom:10px; }
-        p { color:#ccc; margin-bottom:30px; }
-        input, select, textarea { width:100%; padding:12px; margin-bottom:20px; border-radius:8px; border:1px solid #333; background:#222; color:white; box-sizing: border-box; }
-        button { width:100%; padding:15px; background:#ffd700; color:black; border:none; border-radius:50px; font-weight:bold; cursor:pointer; transition:0.3s; font-size:1rem; }
+        .contact-container { background:#1a1a1a; padding:40px; border-radius:15px; width:100%; max-width:500px; box-shadow:0 10px 30px rgba(0,0,0,0.5); text-align:center; position: relative; border: 1px solid #333; }
+        h1 { color:#ffd700; margin-bottom:10px; text-transform: uppercase; font-size: 1.8rem; }
+        p { color:#ccc; margin-bottom:30px; font-size: 0.95rem; line-height: 1.4; }
+        input, select, textarea { width:100%; padding:12px; margin-bottom:20px; border-radius:8px; border:1px solid #333; background:#222; color:white; box-sizing: border-box; outline: none; }
+        input:focus, select:focus, textarea:focus { border-color: #ffd700; }
+        button { width:100%; padding:15px; background:#ffd700; color:black; border:none; border-radius:50px; font-weight:bold; cursor:pointer; transition:0.3s; font-size:1rem; text-transform: uppercase; }
         button:hover { background:#ffc400; transform:scale(1.02); }
-        .depot-alert { color:#ffd700; font-size:0.85rem; margin-top:20px; display:block; font-style:italic; }
-        .btn-back { display: block; margin-bottom: 20px; color: #888; text-decoration: none; font-size: 0.9rem; }
+        .info-box { margin-top: 20px; border-top: 1px solid #333; padding-top: 20px; }
+        .depot-alert { color:#ffd700; font-size:0.9rem; display:block; font-weight: bold; margin-bottom: 5px; }
+        .policy-alert { color:#888; font-size:0.75rem; display:block; font-style:italic; }
+        .btn-back { display: block; margin-bottom: 20px; color: #ffd700; text-decoration: none; font-size: 0.9rem; font-weight: bold; }
     </style>
 </head>
 <body>
 
 <div class="contact-container">
-    <a href="index.html" class="btn-back">← Retour à l'accueil</a>
+    <a href="index.html" class="btn-back">← RETOUR À L'ACCUEIL</a>
     <h1>Prendre rendez-vous</h1>
-    <p>Chez GlowShine Car, chaque véhicule est traité avec précision, soin et respect.</p>
+    <p>Chez <strong>Detail Auto Glow-Shine</strong>, chaque véhicule est traité avec précision, soin et respect.</p>
 
     <form action="https://formspree.io/f/xbdggwvk" method="POST">
         <input type="text" name="nom" placeholder="Nom complet" required>
@@ -33,13 +36,17 @@
             <option value="Sedan">Sedan (Lavage / Teinte / Combo)</option>
             <option value="SUV">SUV (Lavage / Teinte / Combo)</option>
             <option value="Truck">Truck / Van (Lavage / Teinte / Combo)</option>
+            <option value="Sport-Luxe">Sport / Luxe (Lavage / Teinte / Combo)</option>
         </select>
 
         <textarea name="message" rows="4" placeholder="Précisez le service ou posez une question (ex: Date/Heure souhaitée)..."></textarea>
 
         <button type="submit">Envoyer la demande</button>
         
-        <span class="depot-alert">⚠️ Dépôt obligatoire de 30% pour confirmer le rendez-vous.</span>
+        <div class="info-box">
+            <span class="depot-alert">⚠️ Dépôt obligatoire de 30% pour confirmer.</span>
+            <span class="policy-alert">Ventes finales. Aucun remboursement pour toute annulation (24h-48h).</span>
+        </div>
     </form>
 </div>
 
