@@ -14,8 +14,11 @@
         button { width:100%; padding:15px; background:#ffd700; color:black; border:none; border-radius:50px; font-weight:bold; cursor:pointer; transition:0.3s; font-size:1rem; text-transform: uppercase; }
         button:hover { background:#ffc400; transform:scale(1.02); }
         .info-box { margin-top: 20px; border-top: 1px solid #333; padding-top: 20px; }
-        .depot-alert { color:#ffd700; font-size:0.9rem; display:block; font-weight: bold; margin-bottom: 5px; }
-        .policy-alert { color:#888; font-size:0.75rem; display:block; font-style:italic; }
+        .depot-alert { color:#ffd700; font-size:0.9rem; display:block; font-weight: bold; margin-bottom: 8px; }
+        
+        /* PHRASE D'ANNULATION EN JAUNE */
+        .policy-alert { color:#ffd700; font-size:0.85rem; display:block; font-weight: bold; font-style: italic; }
+        
         .btn-back { display: block; margin-bottom: 20px; color: #ffd700; text-decoration: none; font-size: 0.9rem; font-weight: bold; }
     </style>
 </head>
@@ -45,7 +48,7 @@
         
         <div class="info-box">
             <span class="depot-alert">⚠️ Dépôt obligatoire de 30% pour confirmer.</span>
-            <span class="policy-alert">Ventes finales. Aucun remboursement pour toute annulation (24h-48h).</span>
+            <span class="policy-alert">Ventes finales. Aucun remboursement pour toute annulation entre 24h et 48h.</span>
         </div>
     </form>
 </div>
