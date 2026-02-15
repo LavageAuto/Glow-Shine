@@ -49,9 +49,26 @@
         .price { font-size:1.1rem; margin:8px 0; color:#ddd; }
         .btn-select { margin-top:20px; display:inline-block; padding:10px 20px; border: 1px solid #ffd700; color:#ffd700; border-radius:5px; font-weight:bold; text-transform: uppercase; }
 
-        /* --- STYLE ANNULATION (OR ET NOIR) --- */
+        /* --- STYLE EXTRAS POILS --- */
+        .extra-container { margin-top: 40px; }
+        .extra-box {
+            background: linear-gradient(145deg, #1a1a1a, #222);
+            padding: 30px; border-radius: 15px; border: 2px solid #ffd700;
+            display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px;
+            max-width: 900px; margin: 0 auto;
+        }
+        .extra-info { flex: 1; min-width: 300px; text-align: left; }
+        .extra-info h4 { color: #ffd700; margin: 0; font-size: 1.5rem; text-transform: uppercase; display: flex; align-items: center; gap: 10px; }
+        .extra-info p { margin: 10px 0; color: #ccc; font-size: 1rem; }
+        .extra-list { list-style: none; padding: 0; margin: 15px 0 0 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .extra-list li { background: rgba(255, 215, 0, 0.1); padding: 8px 12px; border-radius: 5px; border-left: 3px solid #ffd700; font-size: 0.9rem; }
+        .extra-price-tag { text-align: center; min-width: 150px; }
+        .starting-at { font-size: 0.9rem; color: #ffd700; text-transform: uppercase; }
+        .big-price { font-size: 3rem; font-weight: 900; display: block; color: #fff; }
+
+        /* --- STYLE ANNULATION --- */
         .policy-box {
-            background: #1a1a1a; padding: 30px; border-radius: 15px; border: 1px solid #ffd700; margin-top: 30px; text-align: center;
+            background: #1a1a1a; padding: 30px; border-radius: 15px; border: 1px solid #ffd700; margin-top: 40px; text-align: center;
         }
         .policy-box h3 { color: #ffd700; margin-top: 0; text-transform: uppercase; letter-spacing: 2px; }
 
@@ -132,6 +149,25 @@
         </a>
     </div>
 
+    <div class="extra-container">
+        <div class="extra-box">
+            <div class="extra-info">
+                <h4>🐾 EXTRA : POILS D'ANIMAUX</h4>
+                <p>Nettoyage intensif et retrait des poils incrustés dans les fibres du véhicule.</p>
+                <ul class="extra-list">
+                    <li>🚗 <b>Sedan :</b> +50$</li>
+                    <li>🚙 <b>SUV :</b> +70$</li>
+                    <li>🚚 <b>Truck :</b> +90$</li>
+                    <li>🏎️ <b>Sport/Luxe :</b> 100$+</li>
+                </ul>
+            </div>
+            <div class="extra-price-tag">
+                <span class="starting-at">À partir de</span>
+                <span class="big-price">50$</span>
+            </div>
+        </div>
+    </div>
+
     <div class="discount-section">
         <div id="discount-content">
             <h3>🎁 OFFRES EXCLUSIVES</h3>
@@ -157,10 +193,9 @@
     <div class="approach">
         <h3>Notre Approche</h3>
         <p>✨ Glow-Shine | L'éclat du succès 🚀 <br>
-        Chez <strong>Detail Auto Glow-Shine</strong>, nous croyons que votre véhicule mérite le plus grand soin, peu importe où vous êtes. 
+        Chez <strong>Detail Auto Glow-Shine</strong>, nous croyons que votre véhicule mérite le plus grand soin. 
         C'est pourquoi nous offrons un service de detailing haut de gamme, directement chez vous ou à votre bureau. 
-        Notre équipe d'experts utilise des produits de qualité supérieure pour redonner à votre voiture son éclat d'origine. 
-        Votre vie brille, votre voiture aussi. 🧼</p>
+        Notre équipe d'experts utilise des produits de qualité supérieure pour redonner à votre voiture son éclat d'origine. 🧼</p>
     </div>
 
     <div class="policy-box">
